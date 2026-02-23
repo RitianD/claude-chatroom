@@ -1,0 +1,608 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e0;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-control {
+    padding: 8px 16px;
+    background: #764ba2;
+    color: white;
+}
+
+.btn-control:hover {
+    background: #5e3a80;
+}
+
+/* Auth Section */
+.auth-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #667eea;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #718096;
+}
+
+.auth-toggle a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-toggle a:hover {
+    text-decoration: underline;
+}
+
+/* Chat Section */
+.chat-section {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.chat-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header-left h1 {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.current-user {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Chat Content */
+.chat-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background: #f7fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.online-users-list {
+    list-style: none;
+}
+
+.online-users-list li {
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.online-users-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #48bb78;
+    border-radius: 50%;
+}
+
+/* Messages Area */
+.messages-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f7fafc;
+}
+
+.message {
+    margin-bottom: 16px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.message-username {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 14px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #a0aec0;
+}
+
+.message-content {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.message-content.system {
+    background: #fef3c7;
+    color: #92400e;
+    text-align: center;
+    font-style: italic;
+}
+
+.message.music-message .message-content {
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+    border-left: 4px solid #667eea;
+}
+
+.music-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.music-link:hover {
+    text-decoration: underline;
+}
+
+.message.own {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.message.own .message-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* Input Area */
+.input-area {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.message-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Music Panel */
+.music-panel {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+}
+
+.music-panel h2 {
+    font-size: 20px;
+    color: #667eea;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+.music-panel h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 12px;
+}
+
+/* Now Playing */
+.now-playing {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+}
+
+.now-playing h3 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.now-playing-info {
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.audio-player {
+    width: 100%;
+    margin: 12px 0;
+}
+
+.player-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.player-controls button {
+    flex: 1;
+}
+
+/* Music Queue */
+.music-queue {
+    background: #f7fafc;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.music-queue h3 {
+    margin-top: 0;
+}
+
+.queue-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.queue-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    transition: transform 0.2s ease;
+}
+
+.queue-item:hover {
+    transform: translateX(4px);
+}
+
+.queue-item-title {
+    flex: 1;
+    font-weight: 500;
+    color: #4a5568;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.queue-item-user {
+    font-size: 11px;
+    color: #a0aec0;
+    margin: 0 8px;
+}
+
+.queue-item-remove {
+    background: none;
+    border: none;
+    color: #e53e3e;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    transition: transform 0.2s ease;
+}
+
+.queue-item-remove:hover {
+    transform: scale(1.2);
+}
+
+.queue-empty {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 14px;
+    padding: 20px;
+}
+
+/* Add Music */
+.add-music {
+    background: #f7fafc;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.add-music h3 {
+    margin-top: 0;
+}
+
+.music-input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.music-url-input,
+.music-title-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: border-color 0.3s ease;
+}
+
+.music-url-input:focus,
+.music-title-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.upload-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.upload-status {
+    font-size: 12px;
+    color: #718096;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 14px 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    animation: toastSlide 0.3s ease;
+    max-width: 300px;
+}
+
+@keyframes toastSlide {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toast.success {
+    border-left: 4px solid #48bb78;
+}
+
+.toast.error {
+    border-left: 4px solid #e53e3e;
+}
+
+.toast.info {
+    border-left: 4px solid #4299e1;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .chat-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    .music-panel {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .chat-section {
+        padding: 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .auth-container {
+        padding: 24px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+}
+
+/* Scrollbar Styling */
+.messages-container::-webkit-scrollbar,
+.queue-list::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track,
+.queue-list::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb,
+.queue-list::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover,
+.queue-list::-webkit-scrollbar-thumb:hover,
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}

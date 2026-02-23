@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室 - 点歌系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login/Register Section -->
+    <div id="auth-section" class="auth-section">
+        <div class="auth-container">
+            <h1 id="auth-title">欢迎来到聊天室</h1>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-username">用户名</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密码</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+                <p class="auth-toggle">
+                    还没有账号? <a href="#" id="show-register">注册</a>
+                </p>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form hidden">
+                <div class="form-group">
+                    <label for="register-username">用户名</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密码</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">确认密码</label>
+                    <input type="password" id="register-confirm-password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">注册</button>
+                <p class="auth-toggle">
+                    已有账号? <a href="#" id="show-login">登录</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Section -->
+    <div id="chat-section" class="chat-section hidden">
+        <div class="chat-container">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <h1>聊天室</h1>
+                    <span id="current-user" class="current-user"></span>
+                </div>
+                <div class="header-right">
+                    <button id="logout-btn" class="btn btn-secondary btn-small">退出</button>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <div class="chat-content">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>在线用户</h3>
+                        <ul id="online-users-list" class="online-users-list"></ul>
+                    </div>
+                </aside>
+
+                <!-- Messages Area -->
+                <main class="messages-area">
+                    <div id="messages-container" class="messages-container"></div>
+                </main>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-row">
+                    <input
+                        type="text"
+                        id="message-input"
+                        class="message-input"
+                        placeholder="输入消息..."
+                        autocomplete="off"
+                    >
+                    <button id="send-btn" class="btn btn-primary">发送</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Panel -->
+        <div class="music-panel">
+            <h2>点歌系统</h2>
+
+            <!-- Now Playing -->
+            <div class="now-playing">
+                <h3>正在播放</h3>
+                <div id="now-playing-info" class="now-playing-info">
+                    <p>暂无播放中的歌曲</p>
+                </div>
+                <audio id="audio-player" class="audio-player" controls></audio>
+                <div class="player-controls">
+                    <button id="prev-btn" class="btn btn-control">⏮ 上一首</button>
+                    <button id="next-btn" class="btn btn-control">下一首 ⏭</button>
+                </div>
+            </div>
+
+            <!-- Music Queue -->
+            <div class="music-queue">
+                <h3>播放队列</h3>
+                <ul id="queue-list" class="queue-list"></ul>
+            </div>
+
+            <!-- Add Music -->
+            <div class="add-music">
+                <h3>添加音乐</h3>
+                <div class="music-input-row">
+                    <input
+                        type="text"
+                        id="music-url-input"
+                        class="music-url-input"
+                        placeholder="输入音乐URL..."
+                    >
+                    <input
+                        type="text"
+                        id="music-title-input"
+                        class="music-title-input"
+                        placeholder="歌曲标题 (可选)"
+                    >
+                    <button id="add-music-btn" class="btn btn-primary btn-small">添加URL</button>
+                </div>
+                <div class="upload-row">
+                    <label class="btn btn-secondary btn-small">
+                        📁 上传文件
+                        <input type="file" id="music-file-input" accept=".mp3,.wav,.m4a,.ogg,.flac" hidden>
+                    </label>
+                    <span id="upload-status" class="upload-status"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
